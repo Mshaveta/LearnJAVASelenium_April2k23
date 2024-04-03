@@ -1,8 +1,12 @@
 package support;
 
+import com.google.inject.Inject;
+import io.cucumber.guice.ScenarioScoped;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+@ScenarioScoped
 public class Browser {
     private WebDriver driver;
 
@@ -19,9 +23,4 @@ public class Browser {
         driver.quit();
     }
 
-    public static void main(String[] args) {
-        Browser browser = new Browser();
-        browser.startBrowser();
-        System.out.println(browser.getWebDriver());
-    }
 }
